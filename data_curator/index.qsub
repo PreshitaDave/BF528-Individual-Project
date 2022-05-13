@@ -1,0 +1,16 @@
+#!/bin/bash -l
+
+#$ -N myjob
+#$ -m e
+#$ -pe mpi_16_tasks_per_node 16
+
+########### Description of code #############################
+# Create the index of the reference genome file for Human Release 40 (GRCh38.p13)
+
+
+# Load modules
+module load salmon/1.1.0
+
+salmon index -i gencode.v40.index -k 31 --gencode -p 16 -t /projectnb/bf528/students/preshita/project-4/data/gencode.v40.transcripts.fa.gz
+
+

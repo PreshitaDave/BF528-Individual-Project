@@ -1,0 +1,13 @@
+#!/bin/bash -l
+
+#$ -N myjob 
+#$ -m e
+#$ -pe mpi_28_tasks_per_node 28
+
+########### Description of code #############################
+# Run salmon alevin to create UMI matrix
+
+# Load modules
+module load salmon/1.1.0
+
+salmon alevin -l ISR -1 /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879604/SRR3879604_1_bc.fastq.gz /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879605/SRR3879605_1_bc.fastq.gz /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879606/SRR3879606_1_bc.fastq.gz -2 /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879604/SRR3879604_2.fastq.gz /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879605/SRR3879605_2.fastq.gz /projectnb/bf528/project_4_scrnaseq/fastq/SRR3879606/SRR3879606_2.fastq.gz --end 5 --barcodeLength 19 --umiLength 6 -i /projectnb/bf528/students/preshita/project-4/data/gencode.v40.index/ -p 28 -o /projectnb/bf528/students/preshita/project-4/data/Alevin_Output --tgMap /projectnb/bf528/students/preshita/project-4/data/transcript_to_gene.tsv --whitelist /projectnb/bf528/students/preshita/project-4/data/whitelist.txt --dumpMtx

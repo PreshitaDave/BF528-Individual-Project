@@ -1,0 +1,12 @@
+#!/bin/bash -l
+
+#$ -N myjob
+#$ -m e
+#$ -pe mpi_16_tasks_per_node 16
+
+########### Description of code #############################
+# Mapping of transcript to gene
+
+
+
+zgrep ">" /projectnb/bf528/students/preshita/project-4/data/gencode.v40.transcripts.fa.gz | awk -F'|' '{print $1"\t"$2}' | cut -c 2- > transcript_to_gene.tsv
