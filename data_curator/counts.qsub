@@ -6,8 +6,7 @@
 
 ########### Description of code #############################
 # Extract barcodes from each run, and count the number of reads
-# per distinct barcode. For each run, plot the cumulative
-# distribution and retrieve whitelist
+# per distinct barcode. 
 
 # Load modules
 module unload anaconda3
