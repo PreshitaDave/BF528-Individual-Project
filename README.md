@@ -26,3 +26,8 @@ The data curator folder contains the following scripts:
 The programmer folder contains the script:
 
 1. program.R: Preprocesses the UMI Counts Matrix and saves the rds object with cluster information. 
+
+
+Analyst:
+
+analyst.R: This script analyses and identifies marker genes for clusters that were created.
